@@ -19,7 +19,7 @@ def load_data():
 data=load_data()
 
 st.sidebar.subheader("Show random tweet")
-random_tweet=st.sidebar.radio('sentiment',('positive','neutre','negative'))
+random_tweet=st.sidebar.radio('sentiment',('positive','neutral','negative'))
 st.sidebar.markdown(
     data.query('airline_sentiment == @random_tweet')[['text']].sample(n=1).iat[0, 0]
 )
