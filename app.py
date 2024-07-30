@@ -9,14 +9,11 @@ st.sidebar.title('Sentiment Analysis of Twitter about US Airline')
 st.markdown("This application is a streamlit dashbaorh to Analys sentiment twitter 🐦")
 st.sidebar.markdown("This application is a streamlit dashbaorh to Analys sentiment twitter 🐦")
 
-
+url ="https://raw.githubusercontent.com/satyajeetkrjha/kaggle-Twitter-US-Airline-Sentiment-/master/Tweets.csv"
 @st.cache_data(persist=True)
-
 def load_data():
-    data=pd.read_csv("C:/Users/LENOVO/Downloads/streamlit/Tweets.csv")
-    
+    data=pd.read_csv(url)
     data['tweet_created']=pd.to_datetime(data['tweet_created'])
-    
     return data
 
 data=load_data()
